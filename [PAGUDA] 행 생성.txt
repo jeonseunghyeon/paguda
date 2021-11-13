@@ -1,0 +1,27 @@
+-- 테이블 데이터 생성 : 회원 (user)
+insert into user(id, created_date, email, name, password) 
+	values(1,NOW(), "rgbc@gmail.com","rgbc1666","roll1666");
+insert into user(id, created_date, email, name, password) 
+	values(2,NOW(), "kkki@gmail.com","katkick12","kain1366");
+insert into user(id, created_date, email, name, password) 
+	values(3,NOW(), "marryru@gmail.com","marryru","marry777");
+
+-- 테이블 데이터 생성 : 글 (bord)
+insert into bord(detail_id, member_id, text, createdAt, updateAt) 
+	values(1,1,"팀원구합니다111",NOW(),NOW());
+insert into bord(detail_id, member_id, text, createdAt, updateAt) 
+	values(2,2,"팀원구합니다222",NOW(),NOW());
+insert into bord(detail_id, member_id, text, createdAt, updateAt) 
+	values(3,3,"팀원구합니다333",NOW(),NOW());
+
+-- 테이블 데이터 생성 : 댓글 (comment)
+insert into comment(reply_id, comment, member_id, detail_id, createdAt,updateAt) 
+	values(1,"자리 있나요?111",2,1,NOW(),NOW());
+insert into comment(reply_id, comment, member_id, detail_id, createdAt,updateAt) 
+	values(2,"자리 있나요?222",3,2,NOW(),NOW());
+insert into comment(reply_id, comment, member_id, detail_id, createdAt,updateAt) 
+	values(3,"자리 있나요?333",1,3,NOW(),NOW());
+
+commit;
+
+select * from user;
