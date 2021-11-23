@@ -2,10 +2,12 @@ package com.daelim.paguda.controller;
 
 import com.daelim.paguda.dto.UserDto;
 import com.daelim.paguda.service.UserService;
+import io.swagger.models.Model;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @RequiredArgsConstructor
@@ -34,4 +36,5 @@ public class UserController {
         userService.save(userDto);
         return "redirect:/login";
     }
+
 }
