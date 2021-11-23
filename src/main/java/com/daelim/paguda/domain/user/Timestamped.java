@@ -1,4 +1,4 @@
-package com.daelim.paguda.domain;
+package com.daelim.paguda.domain.user;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

@@ -1,6 +1,6 @@
 package com.daelim.paguda.dto;
 
-import com.daelim.paguda.domain.User;
+import com.daelim.paguda.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 
