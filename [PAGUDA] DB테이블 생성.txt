@@ -1,0 +1,43 @@
+-- 데이터 베이스 생성
+Create database PAGUDA;
+
+-- 데이터 베이스 선택
+use PAGUDA;
+
+-- 테이블 생성 : 회원 (Users)
+Create table user(
+id INTEGER PRIMARY KEY,
+created_date TIMESTAMP default NOW(),
+email VARCHAR(20),
+name VARCHAR(10),
+password VARCHAR(15)
+);
+
+-- 테이블 생성 : 글 (bord)
+CREATE TABLE bord (
+    detail_id INTEGER PRIMARY KEY,
+    member_id INTEGER,
+    text VARCHAR(20),
+    createdAt TIMESTAMP default NOW(),
+    updateAt TIMESTAMP default NOW(),
+    FOREIGN KEY (member_id)
+        REFERENCES user (id)
+);
+
+-- 테이블 생성 : 댓글 (comment)
+CREATE TABLE comment (
+    reply_id INTEGER PRIMARY KEY,
+    comment VARCHAR(100),
+    member_id INTEGER,
+    detail_id INTEGER,
+    createdAt TIMESTAMP default NOW(),
+    updateAt TIMESTAMP default NOW(),
+    FOREIGN KEY (detail_id)
+        REFERENCES bord (detail_id),
+    FOREIGN KEY (member_id)
+        REFERENCES user (id)
+);
+
+commit;
+
+select * from user;
